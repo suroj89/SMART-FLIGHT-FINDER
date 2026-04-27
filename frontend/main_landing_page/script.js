@@ -193,3 +193,64 @@ document.querySelector(".newsletter-box button").addEventListener("click", async
     console.error(error);
   }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ================= VIDEO LOADER FIX =================
+
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+  const video = document.getElementById("loaderVideo");
+
+  if (!loader || !video) return;
+
+  // 🔥 FORCE PLAY (important for some browsers)
+  video.play().catch(() => {});
+
+  // When video ends → hide
+  video.onended = () => {
+    hideLoader();
+  };
+
+  // 🔥 SAFETY (always hide after max time)
+  setTimeout(() => {
+    hideLoader();
+  }, 4000); // 4 sec fallback
+
+  function hideLoader() {
+    loader.style.opacity = "0";
+    loader.style.pointerEvents = "none";
+
+    setTimeout(() => {
+      loader.style.display = "none";
+    }, 600);
+  }
+});
