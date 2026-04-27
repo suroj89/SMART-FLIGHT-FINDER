@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Smart Flight Finder</title>
+      <link rel="stylesheet" href="style.css" />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+      <script src="https://unpkg.com/feather-icons"></script>
+    </head>
+    <body>
+        <!-- Navbar -->
+        <header>
+            <div class="logo">
+                <img src="/frontend/assests/project-logo.png" alt="Airitson Logo">
+                <span>Airitson</span>
+            </div>
+            <nav id="navbar">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Offers</a>
+                <a href="#">Seats</a>
+                <a href="#">Destinations</a>
+            </nav>
+            <div class="nav-btns">
+                <div id="auth-section"></div>
+                <a href="/frontend/contact/contact.html" class="contact-btn">Contact</a>
+                <div class="menu" id="menu-btn"><i data-feather="menu"></i></div>
+            </div>
+        </header>
+        
+        <main>
+            <!-- Hero Section -->
+            <section class="hero">
+                <video autoplay muted loop playsinline class="bg-video">
+                    <source src="../assests/background-video.mp4" type="video/mp4">
+                </video>
+                <div class="hero-content">
+                    <h1>Create Ever-lasting <br> Memories With Us</h1>
+                    <div class="hero-img">
+                        <img src="../assests/plane.png" alt="Airplane">
+                    </div>
+                </div>
+            </section>   
+
+            <!-- Booking Section -->
+            <section class="booking-section">
+                <div class="flight-box">
+                    <div class="class-tabs">
+                        <button class="tab active" data-class="Economy">Economy</button>
+                        <button class="tab" data-class="Business">Business Class</button>
+                        <button class="tab" data-class="First">First Class</button>
+                    </div>
+                    <div class="dropdown">
+                        <button onclick="toggleDropdown()" class="dropbtn" id="trip-type">
+                            One-way ▼
+                        </button>
+                        <div id="dropdownMenu" class="dropdown-content">
+                            <div onclick="selectTrip('One-way')">One-way</div>
+                            <div onclick="selectTrip('Round Trip')">Round Trip</div>
+                        </div>
+                    </div>
+                    
+                    <div class="search-fields">
+                        <div class="field">
+                            <h4>From</h4>
+                            <input type="text" placeholder="Departure city" id="from-location">
+                        </div>
+                        <div class="field">
+                            <h4>Destination</h4>
+                            <input type="text" placeholder="Destination city" id="to-location">
+                        </div>
+                        <div class="field">
+                            <h4>Departure</h4>
+                            <input type="date" id="checkin">
+                        </div>
+                        <div class="field">
+                            <h4>Return</h4>
+                            <input type="date" id="checkout">
+                        </div>
+                        <div class="field">
+                            <h4>Travelers</h4>
+                            <input type="number" min="1" max="9" value="1" id="travelers">
+                        </div>
+                        <button class="search-btn">Search Flight</button>
+                    </div>
+                </div>
+
+                <div class="travel-support">
+                    <h5>T R A V E L &nbsp; S U P P O R T</h5>
+                    <h2>Plan your travel with confidence</h2>
+                    <p>Find help with booking and travel plans, and see what to expect along the journey.</p>
+                </div>
+            </section>
+
+            <!-- Travel Section -->
+            <section class="travel-section">
+                <div class="travel-container">
+                    <div class="travel-text">
+                        <div class="item">
+                            <span class="number blue">01</span>
+                            <h3>Travel requirements for Dubai</h3>
+                            <p>Find help with booking and travel plans, see what to expect along the journey to your favourite destinations!</p>
+                        </div>
+                        <div class="item">
+                            <span class="number orange">02</span>
+                            <h3>Chauffeur services at your arrival</h3>
+                            <p>Find help with booking and travel plans, see what to expect along the journey to your favourite destinations!</p>
+                        </div>
+                        <div class="item">
+                            <span class="number peach">03</span>
+                            <h3>Multi-risk travel insurance</h3>
+                            <p>Find help with booking and travel plans, see what to expect along the journey to your favourite destinations!</p>
+                        </div>
+                    </div>
+                    <div class="travel-images">
+                        <div class="oval big">
+                            <img src="../assests/window1.jpg" alt="">
+                        </div>
+                        <div class="oval mid">
+                            <img src="../assests/window2.jpg" alt="">
+                        </div>
+                        <div class="oval small">
+                            <img src="../assests/window3.webp" alt="">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="features-section">
+                <div class="container">
+                    <div class="features-header">
+                        <h2>Travel to make memories all around the world</h2>
+                        <button class="view-all">View All</button>
+                    </div>
+                    <div class="features-container">
+                        <div class="feature-oval">
+                            <div class="icon blue">
+                                <img src="../assests/calender.png" alt="">
+                            </div>
+                            <h3>Book & Relax</h3>
+                            <p>You can also call airlines from your phone and book a flight ticket!</p>
+                        </div>
+                        <div class="feature-oval">
+                            <div class="icon orange">
+                                <img src="../assests/check.png" alt="">
+                            </div>
+                            <h3>Smart Checklist</h3>
+                            <p>You can also call airlines from your phone and book a flight ticket!</p>
+                        </div>
+                        <div class="feature-oval">
+                            <div class="icon yellow">
+                                <img src="../assests/save.webp" alt="">
+                            </div>
+                            <h3>Save More</h3>
+                            <p>You can also call airlines from your phone and book a flight ticket!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Minor Lounge Section -->
+            <section class="minor-lounge">
+                <div class="text-content">
+                    <h2>Unaccompanied Minor Lounge</h2>
+                    <div class="info-grid">
+                        <div>
+                            <h3>Help through the airport</h3>
+                            <p>You can also call airlines from your phone and book a flight ticket to one of your favorite destinations.</p>
+                        </div>
+                        <div>
+                            <h3>Priority Boarding</h3>
+                            <p>You can also call airlines from your phone and book a flight ticket to one of your favorite destinations.</p>
+                        </div>
+                        <div>
+                            <h3>Care on the flight</h3>
+                            <p>You can also call airlines from your phone and book a flight ticket to one of your favorite destinations.</p>
+                        </div>
+                        <div>
+                            <h3>Chauffeur-drive service</h3>
+                            <p>You can also call airlines from your phone and book a flight ticket to one of your favorite destinations.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="oval-images">
+                    <div class="oval img1">
+                        <img src="../assests/airhotress.jpg" alt="Airplane interior">
+                    </div>
+                    <div class="oval img2">
+                        <img src="../assests/gate airport.jpg" alt="Flight crew">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Travelers Section -->
+            <section class="travelers-section">
+                <h2>Top travelers of this month!</h2>
+                <div class="travelers-container">
+                    <div class="traveler-card">
+                        <div class="oval">
+                            <img src="../assests/img1.jpg" alt="Traveler 1" />
+                        </div>
+                        <div class="profile">
+                            <img src="../assests/profile1.jpg" alt="Profile 1" />
+                        </div>
+                    </div>
+                    <div class="traveler-card">
+                        <div class="oval">
+                            <img src="../assests/img2.jpg" alt="Traveler 2" />
+                        </div>
+                        <div class="profile">
+                            <img src="../assests/profile2.jpg" alt="Profile 2" />
+                        </div>
+                    </div>
+                    <div class="traveler-card">
+                        <div class="oval">
+                            <img src="../assests/img3.jpg" alt="Traveler 3" />
+                        </div>
+                        <div class="profile">
+                            <img src="../assests/profile3.jpg" alt="Profile 3" />
+                        </div>
+                    </div>
+                    <div class="traveler-card">
+                        <div class="oval">
+                            <img src="../assests/img4.jpg" alt="Traveler 4" />
+                        </div>
+                        <div class="profile">
+                            <img src="../assests/profile4.jpg" alt="Profile 4" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+         <!-- Footer Section -->
+  <footer class="footer">
+    <!-- Newsletter -->
+    <div class="newsletter">
+      <h2>Subscribe Newsletters & get Latest News</h2>
+      <div class="newsletter-box">
+        <input type="email" placeholder="Enter your email address" id="emailInput">
+        <button class="subscribe-btn" id="subscribeBtn">Subscribe</button>
+      </div>
+    </div>
+
+    <!-- Footer Main -->
+    <div class="footer-content">
+      <!-- Left Info -->
+      <div class="footer-left">
+        <div class="footer-logo">
+          <img src="https://cdn-icons-png.flaticon.com/512/681/681392.png" alt="logo">
+        </div>
+        <p>Your mind should be stronger than your feelings, fly!</p>
+        <!-- Social Icons -->
+        <div class="social-icons">
+          <a href="https://facebook.com" target="_blank">
+            <img src="../assests/facebook.png" alt="Facebook">
+          </a>
+          <a href="https://instagram.com" target="_blank">
+            <img src="../assests/instagram.png" alt="Instagram">
+          </a>
+          <a href="https://youtube.com" target="_blank">
+            <img src="../assests/Youtoube.png" alt="YouTube">
+          </a>
+          <a href="https://twitter.com" target="_blank">
+            <img src="../assests/Twitter-removebg-preview (1).png" alt="Twitter">
+          </a>
+        </div>
+      </div>
+
+      <!-- Links -->
+      <div class="footer-links">
+        <div>
+          <h3>Information</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Explore</a></li>
+            <li><a href="#">Flight Status</a></li>
+            <li><a href="#">Travel</a></li>
+            <li><a href="#">Check-In</a></li>
+            <li><a href="#">Manage your booking</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Quick Guide</h3>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">How to</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Baggage</a></li>
+            <li><a href="#">Route Map</a></li>
+            <li><a href="#">Our communities</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Information</h3>
+          <ul>
+            <li><a href="#">Chauffeur</a></li>
+            <li><a href="#">Our partners</a></li>
+            <li><a href="#">Destination</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Transportation</a></li>
+            <li><a href="#">Programme Rules</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p>Courtesy Design | Developed by <a href="#"> Airitson</a></p>
+    </div>
+  </footer>
+
+        <script src="script.js"></script>
+        <script>feather.replace();</script>
+    </body>
+</html>

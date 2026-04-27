@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("gbmiDekTERvOkiMBd"); // ✅ Public key
+        })();
+    </script>
+
+</head>
+<body>
+
+<section class="contact-section">
+    <div class="contact-container">
+
+        <!-- Left Side Form -->
+        <div class="contact-form">
+            <h2>Contact us</h2>
+
+            <div class="input-box">
+                <i data-feather="user"></i>
+                <input type="text" id="name" placeholder="Name">
+            </div>
+
+            <div class="input-box">
+                <i data-feather="mail"></i>
+                <input type="email" id="email" placeholder="Email">
+            </div>
+
+            <textarea id="message" placeholder="Message"></textarea>
+
+            <button class="send-btn" id="send">Send Message</button>
+        </div>
+
+        <!-- Right Side Illustration -->
+        <div class="contact-illustration">
+            <img src="../assests/contact.jpg" alt="Contact Illustration">
+        </div>
+
+    </div>
+</section>
+
+<script>feather.replace();</script>
+<script src="contact.js"></script>
+
+</body>
+</html>
