@@ -243,7 +243,6 @@ window.addEventListener("load", () => {
     video.play().catch(() => {});
 
     video.onended = hideVideo;
-
     setTimeout(hideVideo, 4000);
 
     function hideVideo() {
@@ -265,3 +264,6 @@ window.addEventListener("load", () => {
     videoLoader.style.display = "none";
   }
 });
+
+
+// ai add
