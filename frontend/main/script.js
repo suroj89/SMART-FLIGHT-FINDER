@@ -222,35 +222,46 @@ document.querySelector(".newsletter-box button").addEventListener("click", async
 
 
 
-
-
-// ================= VIDEO LOADER FIX =================
+// ===== PERFECT LOADER FIX =====
 
 window.addEventListener("load", () => {
-  const loader = document.getElementById("loader");
+  const videoLoader = document.getElementById("loader");
+  const spinnerLoader = document.getElementById("spinner-loader");
   const video = document.getElementById("loaderVideo");
 
-  if (!loader || !video) return;
+  if (!videoLoader || !spinnerLoader) return;
 
-  // 🔥 FORCE PLAY (important for some browsers)
-  video.play().catch(() => {});
+  // ✅ ONLY CHECK THIS (MAIN FIX)
+  const isFirstVisit = sessionStorage.getItem("visited") === null;
 
-  // When video ends → hide
-  video.onended = () => {
-    hideLoader();
-  };
+  if (isFirstVisit) {
+    // 🎬 FIRST TIME ONLY → VIDEO
+    sessionStorage.setItem("visited", "true");
 
-  // 🔥 SAFETY (always hide after max time)
-  setTimeout(() => {
-    hideLoader();
-  }, 4000); // 4 sec fallback
+    videoLoader.style.display = "flex";
 
-  function hideLoader() {
-    loader.style.opacity = "0";
-    loader.style.pointerEvents = "none";
+    video.play().catch(() => {});
+
+    video.onended = hideVideo;
+
+    setTimeout(hideVideo, 4000);
+
+    function hideVideo() {
+      videoLoader.style.opacity = "0";
+      setTimeout(() => {
+        videoLoader.style.display = "none";
+      }, 500);
+    }
+
+  } else {
+    // 🔄 ALL OTHER CASES → SPINNER ONLY
+    spinnerLoader.style.display = "flex";
 
     setTimeout(() => {
-      loader.style.display = "none";
-    }, 600);
+      spinnerLoader.style.display = "none";
+    }, 800);
+
+    // 🔥 IMPORTANT: NEVER SHOW VIDEO AGAIN
+    videoLoader.style.display = "none";
   }
 });

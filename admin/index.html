@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>META Admin - Airitson Flight Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- META SIDEBAR -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <i class="fas fa-plane-departure"></i>
+                <span>META Admin</span>
+            </div>
+            <div class="meta-status">Live</div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active" data-page="dashboard">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>Dashboard</span>
+                <div class="meta-badge">LIVE</div>
+            </a>
+            <a href="#" class="nav-item" data-page="flights">
+                <i class="fas fa-plane"></i>
+                <span>Flights</span>
+                <span class="meta-count">1.2K</span>
+            </a>
+            <a href="#" class="nav-item" data-page="bookings">
+                <i class="fas fa-file-invoice"></i>
+                <span>Bookings</span>
+                <span class="meta-count">892</span>
+            </a>
+            <a href="#" class="nav-item" data-page="users">
+                <i class="fas fa-users"></i>
+                <span>Users</span>
+                <span class="meta-count">5.4K</span>
+            </a>
+            <a href="#" class="nav-item" data-page="destinations">
+                <i class="fas fa-map-marked-alt"></i>
+                <span>Destinations</span>
+            </a>
+            <a href="#" class="nav-item" data-page="offers">
+                <i class="fas fa-tags"></i>
+                <span>Offers</span>
+            </a>
+            <a href="#" class="nav-item" data-page="analytics">
+                <i class="fas fa-chart-line"></i>
+                <span>Analytics</span>
+            </a>
+            <a href="#" class="nav-item" data-page="settings">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </a>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <div class="online-status">
+                <span class="status-dot online"></span>
+                <span>Online</span>
+            </div>
+            <a href="../frontend/login/login.html" class="logout">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+        <!-- META HEADER -->
+        <header class="admin-header">
+            <div class="header-left">
+                <button class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1 id="page-title">META Dashboard</h1>
+            </div>
+            <div class="header-right">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search flights, bookings, users...">
+                </div>
+                <div class="notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">3</span>
+                </div>
+                <div class="user-profile">
+                    <img src="assets/profile1.jpg" alt="META Admin">
+                    <span>META Super Admin</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- META MAIN CONTENT -->
+        <main class="admin-main">
+            <!-- DASHBOARD -->
+            <div id="dashboard" class="page-content active">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon blue">
+                            <img src="assets/icons/flights.png" alt="Flights" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                            <i class="fas fa-plane" style="display:none"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>1,247</h3>
+                            <p>Total Flights</p>
+                        </div>
+                        <div class="stat-change positive">+12%</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon green">
+                            <img src="assets/icons/bookings.png" alt="Bookings" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                            <i class="fas fa-book" style="display:none"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>892</h3>
+                            <p>Active Bookings</p>
+                        </div>
+                        <div class="stat-change positive">+8%</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon orange">
+                            <img src="assets/icons/analytics.png" alt="Users" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                            <i class="fas fa-users" style="display:none"></i>
+                        </div>
+                        <div class="stat-info">
+                           
